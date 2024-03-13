@@ -1,0 +1,42 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var currentStep = 1;
+    var totalSteps = 5;
+    var nextButtons = document.querySelectorAll('.next-step-button');
+    var backButtons = document.querySelectorAll('.back-button');
+    var downloadMemoryButton = document.getElementById('downloadMemoryDrawing');
+    var downloadObservationButton = document.getElementById('downloadObservationDrawing');
+    var canvasMemory = document.getElementById('canvasMemory');
+    var canvasObservation = document.getElementById('canvasObservation');
+    
+    // Initialize drawing on canvases (assuming initCanvasDrawing is a defined function)
+    // initCanvasDrawing(canvasMemory);
+    // initCanvasDrawing(canvasObservation);
+
+    nextButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            if(currentStep < totalSteps) {
+                document.getElementById('step' + currentStep).style.display = 'none';
+                currentStep++;
+                document.getElementById('step' + currentStep).style.display = 'block';
+            }
+        });
+    });
+
+    backButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            if(currentStep > 1) {
+                document.getElementById('step' + currentStep).style.display = 'none';
+                currentStep--;
+                document.getElementById('step' + currentStep).style.display = 'block';
+            }
+        });
+    });
+
+    // Functions for downloading canvases will go here
+    // downloadCanvas(canvasMemory, downloadMemoryButton, 'memory-drawing.png');
+    // downloadCanvas(canvasObservation, downloadObservationButton, 'observation-drawing.png');
+
+    // Gallery functionality to display images will go here
+    // populateGallery();
+});
+
