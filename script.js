@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentStepIndex > 0) showStep(currentStepIndex - 1);
     }));
 
-    //restartButton.addEventListener('click', () => showStep(0));//
+    restartButton.addEventListener('click', () => showStep(0));
 
     // Download functionality remains unchanged
     function downloadCanvas(canvasId, filename) {
