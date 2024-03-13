@@ -1,0 +1,241 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap')
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', serif;
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+.nav-bar {
+    background-color: 000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.below-nav {
+    background-color: 000;
+    padding: 0px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+h1 {
+    display: initial;
+    margin: 30px auto;
+    font-family: DM Sans Light, sans-serif;
+    font-weight: 45;
+    font-size: 45px;
+    line-height: 1.2;
+}
+
+h2 {
+    display: initial;
+    margin: 30px auto;
+    font-family: DM Sans Light, sans-serif;
+    font-weight: 45;
+    font-size: 35px;
+    line-height: 1.2;
+}
+
+
+
+.nav-bar button {
+    color: black;
+    background-color: transparent;
+    display: inline-block;
+    border: 2px solid light grey;
+}
+
+.step {
+    display: none;
+    padding: 30px;
+    text-align: left;
+    max-width: 550px;
+    min-width: 70%;
+}
+
+.step.active {
+    display: block;
+    cursor:  url('crayon-cursor.png');
+}
+
+
+
+
+
+@keyframes underlineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+mark {
+    display: inline-block;
+    position: relative;
+    background: transparent;
+}
+
+mark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with no background, for the green hover effect */
+    background-color: #95FEE5; /* Green background color for hover */
+    z-index: -1;
+    transition: width 0.5s ease; /* Transition for expanding the background on hover */
+}
+
+mark::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Adjust this value based on your font size and preferences */
+    left: 0;
+    width: 0; /* Start with no underline */
+    height: 3px; /* Thickness of the underline */
+    background-color: blue; /* Underline color */
+    animation: underlineGrow 1s forwards; /* Adjust the timing as needed */
+}
+
+mark::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Adjust based on your preferences */
+    left: 0;
+    width: 100%; /* Ensure it covers the full width initially */
+    height: 3px; /* Thickness of the underline */
+    background-color: blue; /* Initial underline color */
+    animation: underlineGrow 1s forwards; /* Animation to grow the underline */
+}
+
+mark:hover::before {
+    width: 100%; /* On hover, expand the green background to full width */
+}
+
+canvas {
+    display: inline;
+    margin: 30px auto;
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 25px;    
+    cursor:  url('crayon-cursor.png');
+    max-width: 800px;
+    width: 80%;
+    height: auto;
+}
+
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid lightgrey;
+    border-radius: 40px;
+    background-color: white;
+    font-family: DM Sans Light, sans-serif;
+    font-weight: 40;
+    font-size: 20px;
+}
+
+button:hover {
+    background: #95FEE5;
+}
+
+
+@media (max-width: 768px) {
+    .canvas-container canvas {
+        width: 80%; /* Adjust canvas size on smaller screens */
+        height: auto;
+    }
+
+
+.step {
+    display: none;
+    padding: 20px;
+    text-align: left;
+    max-width: 550px;
+    min-width: 65%;
+}
+
+
+ h1 {
+    display: initial;
+    margin: 30px auto;
+    font-family: DM Sans Light, sans-serif;
+    font-weight: 30;
+}
+
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid lightgrey;
+    border-radius: 40px;
+    background-color: white;
+    font-family: DM Sans Light, sans-serif;
+    font-weight: 40;
+    font-size: 15px;
+}
+
+    /* Adjust font sizes, button sizes, etc., as needed */
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small devices */
+
+    h1 {
+    font-weight: 40;
+    font-size: 30px;
+    display: initial;
+    margin: 30px auto;
+    font-family: DM Sans Light, sans-serif;
+
+}
+
+h2 {
+    display: initial;
+    margin: 30px auto;
+    font-family: DM Sans Light, sans-serif;
+    font-weight: 45;
+    font-size: 25px;
+}
+
+
+
+canvas {
+    display: inline;
+    margin: 30px auto;
+    background-color: white;
+    border: 2px solid Green;
+    border-radius: 25px;    
+    cursor:  url('crayon-cursor.png');
+    min-width: 250px;
+    max-width: 460px;
+    width: 80%;
+    height: auto;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid lightgrey;
+    border-radius: 40px;
+    background-color: white;
+    font-family: DM Sans Light, sans-serif;
+    font-weight: 40;
+    font-size: 8px;
+}
+}
