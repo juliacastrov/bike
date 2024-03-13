@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentStepIndex > 0) showStep(currentStepIndex - 1);
     }));
 
-    restartButton.addEventListener('click', () => showStep(0));
+    //restartButton.addEventListener('click', () => showStep(0));//
 
     // Download functionality remains unchanged
     function downloadCanvas(canvasId, filename) {
@@ -93,34 +93,3 @@ function initCanvasDrawing(canvasId) {
     window.addEventListener('touchend', stopDrawing);
     canvas.addEventListener('mouseout', stopDrawing);
 }
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const steps = document.querySelectorAll('.step');
-    const nextButtons = document.querySelectorAll('.next-button');
-    let currentStepIndex = 0;
-
-    function showStep(nextIndex) {
-        // Ensure the nextIndex is within bounds
-        if (nextIndex >= 0 && nextIndex < steps.length) {
-            const currentStep = steps[currentStepIndex];
-            const nextStep = steps[nextIndex];
-
-            // Fade out current step
-            currentStep.classList.remove('active');
-
-            // Delay the display of the next step to allow fade-out effect
-            setTimeout(() => {
-                nextStep.classList.add('active');
-            }, 500); // This delay should match the CSS transition time
-
-            // Update the current step index
-            currentStepIndex = nextIndex;
-        }
-    }
-
-    nextButtons.forEach((button, index) => {
-        button.addEventListener('click', () => showStep(index + 1));
-    });
-});
